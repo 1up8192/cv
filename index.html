@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Péter Újvári — CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet" />
     <style>
+      @font-face {
+        font-family: "AsciiLogoMono";
+        src: url("./fonts/DejaVuSansMono.woff2") format("woff2");
+        font-display: block;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
       :root {
         /* ── body ── */
         --bg: #17181e;
@@ -59,17 +69,17 @@
 
       /* ── ASCII LOGO ── */
       .logo-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
         margin-bottom: 0.4rem;
       }
       .logo {
-        line-height: 1.1;
-        font-size: clamp(4px, 3.2vw, 14px);
+        display: inline-block;
+        line-height: 1.02;
+        font-size: min(14px, calc((100vw - 3rem) / 46));
         letter-spacing: 0;
         margin-bottom: 0;
         white-space: pre;
-        font-family: "Noto Sans Mono", "Courier New", monospace;
+        font-family: "AsciiLogoMono", monospace;
         font-kerning: none;
         font-variant-ligatures: none;
         font-feature-settings: "liga" 0, "calt" 0;
@@ -202,6 +212,10 @@
         body {
           font-size: 14px;
           padding: 1rem 0.75rem 3rem;
+        }
+        .logo {
+          font-size: calc((100vw - 1.5rem) / 46);
+          line-height: 1;
         }
       }
     </style>
