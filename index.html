@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Péter Újvári — CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet" />
     <style>
       :root {
         /* ── body ── */
@@ -57,13 +58,21 @@
       }
 
       /* ── ASCII LOGO ── */
+      .logo-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 0.4rem;
+      }
       .logo {
         line-height: 1.1;
         font-size: clamp(4px, 3.2vw, 14px);
         letter-spacing: 0;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0;
         white-space: pre;
-        font-family: inherit;
+        font-family: "Noto Sans Mono", "Courier New", monospace;
+        font-kerning: none;
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "calt" 0;
         background: linear-gradient(
           135deg,
           var(--logo-hi) 0%,
@@ -198,6 +207,7 @@
     </style>
   </head>
   <body>
+    <div class="logo-wrap">
     <!-- prettier-ignore -->
     <pre class="logo">
  ██████╗ ███████╗████████╗███████╗██████╗
@@ -212,6 +222,7 @@
  ██║   ██║██   ██║╚██╗ ██╔╝██╔══██║██╔══██╗██║
  ╚██████╔╝╚█████╔╝ ╚████╔╝ ██║  ██║██║  ██║██║
   ╚═════╝  ╚════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝</pre>
+    </div>
     <div class="subtitle">
       Ethereum / Solidity architect (10y) · Built $100M+ value secured systems ·
       Experienced with agentic tooling
