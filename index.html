@@ -59,8 +59,8 @@
       /* ── ASCII LOGO ── */
       .logo {
         line-height: 1.1;
-        font-size: 14px;
-        letter-spacing: 0.5px;
+        font-size: clamp(4px, 3.2vw, 14px);
+        letter-spacing: 0;
         margin-bottom: 0.4rem;
         white-space: pre;
         font-family: inherit;
@@ -193,16 +193,6 @@
         body {
           font-size: 14px;
           padding: 1rem 0.75rem 3rem;
-        }
-        .logo {
-          font-size: 9px;
-          letter-spacing: 0;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .logo {
-          font-size: 6.5px;
         }
       }
     </style>
