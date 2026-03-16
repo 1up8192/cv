@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Péter Újvári — CV</title>
+    <style>
+      :root {
+        /* ── body ── */
+        --bg: #17181e;
+        --text: #aaa;
+        --text-bright: #e0e0e0;
+        --text-dim: #666;
+        --text-faint: #2a2a2a;
+        --link: #7ab4cc; /* desaturated blue  */
+        --accent: #c8885a; /* muted terracotta  — headings, company names */
+        --green: #5aaa7a; /* muted green       — bullets, tags */
+        --yellow: #c8a85a; /* warm gold         — emphasis, degrees */
+        /* ── logo gradient: orange → yellow ── */
+        --logo-hi: #ff6a00; /* deep orange  */
+        --logo-mid: #f5920a; /* amber        */
+        --logo-lo: #f7c948; /* gold         */
+        --logo-fade: #ffe680; /* pale yellow  */
+        /* ── logo glow colours ── */
+        --glow-near: rgba(245, 146, 10, 0.45); /* amber */
+        --glow-far: rgba(255, 106, 0, 0.15); /* orange */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas",
+          "Courier New", monospace;
+        font-size: 16px;
+        line-height: 1.55;
+        padding: 2rem 1.5rem 4rem;
+        max-width: 90ch;
+        margin: 0 auto;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      strong,
+      b {
+        color: var(--text-bright);
+        font-weight: 600;
+      }
+
+      /* ── ASCII LOGO ── */
+      .logo {
+        line-height: 1.1;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.4rem;
+        white-space: pre;
+        font-family: inherit;
+        background: linear-gradient(
+          135deg,
+          var(--logo-hi) 0%,
+          var(--logo-mid) 30%,
+          var(--logo-lo) 65%,
+          var(--logo-fade) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0 0 6px var(--glow-near))
+          drop-shadow(0 0 20px var(--glow-far));
+      }
+
+      .subtitle {
+        color: var(--text-dim);
+        margin-bottom: 1.8rem;
+      }
+
+      .contact {
+        color: var(--text-dim);
+        margin-bottom: 2rem;
+      }
+      .contact a {
+        color: var(--text-dim);
+      }
+      .contact a:hover {
+        color: var(--text);
+      }
+
+      /* ── SECTIONS ── */
+      .sep {
+        color: var(--text-faint);
+        margin: 1.8rem 0 0.8rem;
+      }
+
+      h2 {
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.6rem;
+      }
+
+      .block {
+        margin-bottom: 1.4rem;
+      }
+
+      .job-head {
+        color: var(--text-bright);
+      }
+      .job-head .company {
+        color: var(--accent);
+      }
+      .job-date {
+        color: var(--text-dim);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        padding-left: 2ch;
+        position: relative;
+      }
+      li::before {
+        content: ">";
+        position: absolute;
+        left: 0;
+        color: var(--green);
+      }
+      li strong {
+        color: var(--yellow);
+      }
+
+      .hl {
+        color: var(--yellow);
+      }
+
+      .earlier-item {
+        margin-bottom: 0.6rem;
+      }
+      .earlier-title {
+        color: var(--accent);
+      }
+      .earlier-role {
+        color: var(--text);
+      }
+      .earlier-meta {
+        color: var(--text-dim);
+      }
+      .earlier-desc {
+        color: var(--text-dim);
+      }
+
+      .tags {
+        color: var(--green);
+      }
+      .tags.dim {
+        color: var(--text-dim);
+      }
+
+      .edu-school {
+        color: var(--text-bright);
+      }
+      .edu-degree {
+        color: var(--yellow);
+      }
+      .edu-year {
+        color: var(--text-dim);
+      }
+
+      .lang-name {
+        color: var(--text-bright);
+      }
+
+      .prompt {
+        color: var(--green);
+      }
+      .dim {
+        color: var(--text-dim);
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+          padding: 1rem 0.75rem 3rem;
+        }
+        .logo {
+          font-size: 9px;
+          letter-spacing: 0;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .logo {
+          font-size: 6.5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- prettier-ignore -->
+    <pre class="logo">
+ ██████╗ ███████╗████████╗███████╗██████╗
+ ██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗
+ ██████╔╝█████╗     ██║   █████╗  ██████╔╝
+ ██╔═══╝ ██╔══╝     ██║   ██╔══╝  ██╔══██╗
+ ██║     ███████╗   ██║   ███████╗██║  ██║
+ ╚═╝     ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+ ██╗   ██╗     ██╗██╗   ██╗ █████╗ ██████╗ ██╗
+ ██║   ██║     ██║██║   ██║██╔══██╗██╔══██╗██║
+ ██║   ██║     ██║██║   ██║███████║██████╔╝██║
+ ██║   ██║██   ██║╚██╗ ██╔╝██╔══██║██╔══██╗██║
+ ╚██████╔╝╚█████╔╝ ╚████╔╝ ██║  ██║██║  ██║██║
+  ╚═════╝  ╚════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝</pre>
+    <div class="subtitle">
+      Ethereum / Solidity architect (10y) · Built $100M+ value secured systems ·
+      Experienced with agentic tooling
+    </div>
+    <div class="contact">
+      Péter Újvári <br />
+      Copenhagen, Denmark / remote <br />
+      +45 52 80 67 00 <br />
+      <a href="mailto:peter.ujvari92@gmail.com">peter.ujvari92@gmail.com</a>
+      <br />
+      <a href="https://github.com/1up8192">github.com/1up8192</a>
+      |
+      <a href="https://www.linkedin.com/in/peter-ujvari92"
+        >linkedin.com/peter-ujvari92</a
+      >
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <h2>Summary</h2>
+
+    <div class="block">
+      Ethereum smart contract architect/engineer with 10 years in the Ethereum
+      ecosystem and 12 years of professional software experience overall. I
+      build production-grade DeFi systems end-to-end: translating product ideas
+      into smart contract architectures, implementing them safely, and hardening
+      them through testing, audit response, and incident response.
+    </div>
+
+    <ul>
+      <li>
+        Built and maintained production contracts securing
+        <strong>$100M+ in value</strong>
+      </li>
+      <li>
+        Strong experience in
+        <strong>incident response, hardening, and safety-by-design</strong>
+      </li>
+      <li>
+        Testing-heavy:
+        <strong
+          >mainnet-fork testing, invariants, fuzz/property-based testing</strong
+        >
+      </li>
+      <li>
+        Experience with <strong>ethers.js, Hardhat, Foundry, Tenderly</strong>
+      </li>
+      <li>
+        Early adopter of <strong>agentic coding tools</strong> to accelerate
+        planning, testing, hardening
+      </li>
+      <li>
+        Strong practical foundations in <strong>cryptography</strong> and threat
+        modeling
+      </li>
+      <li><strong>Computer science and engineering</strong> background</li>
+      <li><strong>Linux and CLI-native</strong></li>
+    </ul>
+
+    <div class="block" style="margin-top: 1rem">
+      <span class="dim">Interested in:</span> Permissionless systems,
+      decentralization, privacy tech, ZK, and applications where on-chain
+      primitives unlock genuinely novel value.
+    </div>
+    <div class="block" style="margin-top: 1rem">
+      <span class="dim">Open to:</span> Senior/Lead roles in
+      <span class="hl"
+        >Solidity, protocol engineering, or smart contract security</span
+      >
+      — Copenhagen (hybrid) or remote.
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <h2>Experience</h2>
+
+    <div class="block">
+      <div class="job-head">
+        <span class="company">NFTfi</span> — Senior Smart Contract Developer
+      </div>
+      <div class="job-date">Jul 2021 – Present | Remote</div>
+      <ul>
+        <li>
+          Core architect and primary builder of NFTfi's smart contract system
+          for <strong>NFT-backed P2P loans</strong>, from design to production
+          releases
+        </li>
+        <li>
+          Maintained and upgraded contracts securely escrowing high-value NFT
+          collateral, including <strong>tokenized / RWA-style assets</strong>
+        </li>
+        <li>
+          Designed deployment and migration flows for frequent upgrades while
+          minimizing user disruption
+        </li>
+        <li>Improved gas efficiency and reduced required user interactions</li>
+        <li>
+          Built hardening workflows:
+          <strong
+            >mainnet-fork tests, invariants, fuzz/property-based testing, audit
+            response, incident response</strong
+          >
+        </li>
+        <li>
+          Collaborated closely with product, frontend/backend teams, and
+          external auditors
+        </li>
+        <li>
+          Shared knowledge internally on Ethereum, cryptography, and smart
+          contract architecture
+        </li>
+        <li>
+          Delivered advanced protocol features including
+          <strong
+            >flashloan-based refinancing, Merkle-tree and oracle-backed token
+            distribution, BoringVault-style vault integrations</strong
+          >
+        </li>
+        <li>
+          Designed and implemented competitive migration mechanisms to attract
+          users from competing protocols
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="job-head">
+        <span class="company">Unslashed Finance</span> — Smart Contract
+        Architect / Developer
+      </div>
+      <div class="job-date">May 2020 – Jun 2021 | Remote</div>
+      <ul>
+        <li>Employee #2 at an early-stage DeFi insurance startup</li>
+        <li>
+          Contributed a substantial part of the smart contract architecture and
+          implementation
+        </li>
+        <li>
+          Helped build a production protocol that reached
+          <strong>$160M+ TVL</strong> at peak
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="job-head">
+        <span class="company">MakerDAO</span> — Software Developer
+      </div>
+      <div class="job-date">Aug 2018 – Dec 2018 | Copenhagen</div>
+      <ul>
+        <li>
+          Developed internal tools and created user-facing guides and tutorials
+        </li>
+      </ul>
+    </div>
+
+    <h2>Earlier Experience</h2>
+
+    <div class="earlier-item">
+      <span class="earlier-title">Galaxis Network / Solidity Services</span> —
+      <span class="earlier-role"
+        >Founder &amp; Smart Contract Architect / Consultant</span
+      >
+      <span class="earlier-meta"
+        >| Mar 2018 – Dec 2019 | Budapest / Remote</span
+      >
+      <div class="earlier-desc">
+        Founded and built a DeFi portfolio management project (Galaxis Network);
+        in parallel consulted on blockchain projects — designing smart contract
+        architectures, delivering development work and training (Solidity
+        Services).
+      </div>
+    </div>
+
+    <div class="earlier-item">
+      <span class="earlier-title">EPAM Systems</span> —
+      <span class="earlier-role">Software Engineer</span>
+      <span class="earlier-meta">| May 2016 – Mar 2018 | Budapest</span>
+      <div class="earlier-desc">
+        Blockchain Competency Center: research, proof-of-concepts, and internal
+        training.
+      </div>
+    </div>
+
+    <div class="earlier-item">
+      <span class="earlier-title">Rubin Informatikai Zrt.</span> —
+      <span class="earlier-role">Junior Software Developer</span>
+      <span class="earlier-meta">| Oct 2014 – Apr 2016 | Budapest</span>
+      <div class="earlier-desc">
+        Backend features for a telecommunications service in Java/Spring with
+        Oracle DB.
+      </div>
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <h2>Education</h2>
+
+    <div class="block">
+      <div>
+        <span class="edu-school">DTU – Technical University of Denmark</span>
+      </div>
+      <div>
+        <span class="edu-degree"
+          >Master's programme, Space Engineering and Mathematical Modeling</span
+        >
+        <span class="edu-year">| 2020 – 2022</span>
+      </div>
+    </div>
+
+    <div class="block">
+      <div>
+        <span class="edu-school"
+          >Budapest University of Technology and Economics</span
+        >
+      </div>
+      <div>
+        <span class="edu-degree">BSc, Computer Engineering</span>
+        <span class="edu-year">| 2011 – 2016</span>
+      </div>
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <h2>Skills</h2>
+
+    <div class="block">
+      <span class="dim">core:</span>
+      <span class="tags"
+        >Ethereum · Solidity · Smart Contract Design · Software Architecture ·
+        Smart Contract Testing · Agentic Coding · Cryptography
+        Fundamentals</span
+      >
+      <br />
+      <span class="dim">tooling:</span>
+      <span class="tags"
+        >Hardhat · Foundry · ethers.js · Tenderly · JavaScript · Python · Linux
+        · Git</span
+      >
+      <br />
+      <span class="dim">earlier:</span>
+      <span class="tags dim">Java · C# · C · C++ · SQL · Erlang · Prolog</span>
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <h2>Languages</h2>
+
+    <div class="block">
+      <span class="lang-name">English</span>
+      <span class="dim">— Professional working</span> <br />
+      <span class="lang-name">Hungarian</span>
+      <span class="dim">— Native / bilingual</span> <br />
+      <span class="lang-name">Danish</span>
+      <span class="dim">— Intermediate</span>
+    </div>
+
+    <div class="sep">
+      ────────────────────────────────────────────────────────────────────────
+    </div>
+    <div class="dim">peter.ujvari92@gmail.com · Copenhagen, Denmark</div>
+    <div class="dim" style="margin-top: 0.8rem">
+      <a href="cv2026-print.html">printer-friendly version</a>
+      ·
+      <a href="cv2026.pdf" download>download PDF ⬇</a>
+    </div>
+  </body>
+</html>
